@@ -47,6 +47,12 @@
                         <div id="dataContainer1" class="data-table"></div>
                     </div>
                 </div>
+                <div class="download-section">
+                    <h3>Baixar Feed Completo</h3>
+                    <button onclick="downloadFeed('json')">Baixar JSON</button>
+                    <button onclick="downloadFeed('xml')">Baixar XML</button>
+                    <button onclick="downloadFeed('csv')">Baixar CSV</button>
+                </div>
                 <div class="divider"></div>
                 <div class="container-flex">
                     <div class="chart-section">
@@ -105,5 +111,13 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const channelId = "2720624";
+
+        function downloadFeed(format) {
+            let downloadUrl = `https://api.thingspeak.com/channels/${channelId}/feed.${format}`;
+            window.open(downloadUrl, "_blank");
+        }
+    </script>
 </body>
 </html>
