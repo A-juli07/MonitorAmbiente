@@ -27,16 +27,21 @@ function updateTemperatureData(results) {
         .then(data => {
             const feeds = data.feeds.reverse();
             let dataContainer1 = document.getElementById("dataContainer1");
+            let maxTemperature = -Infinity;
             let htmlContent = ``;
 
             feeds.forEach(feed => {
+                const temperature = parseFloat(feed.field1);
+                if (temperature > maxTemperature) maxTemperature = temperature;
+                
                 const createdAt = new Date(feed.created_at);
                 const date = createdAt.toLocaleDateString();
                 const time = createdAt.toLocaleTimeString();
 
                 htmlContent += `<p>Temperatura: ${feed.field1}°C (${date}, Hora: ${time})</p>`;
             });
-
+            
+            document.getElementById("maxTemperature").innerText = `Maior Temperatura: ${maxTemperature}°C`;
             dataContainer1.innerHTML = htmlContent;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
