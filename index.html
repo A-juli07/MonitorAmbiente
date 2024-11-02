@@ -25,6 +25,29 @@
         .botao-download:hover {
             background-color: #0056b3;
         }
+        #maxValues {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .data-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0; /* Cor de fundo */
+            border-radius: 50%; /* Forma de círculo */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -119,11 +142,16 @@
             <a href="https://thingspeak.mathworks.com/channels/2720624/field/3.csv" download="datos.csv" class="botao-download">Descargar datos de hidrogeno en CSV</a>
             <div class="divider"></div>
             <div id="maxValues">
-                <p id="maxTemperature">Mayor Temperatura: --°C</p>
-                <p id="maxHumidity">Mayor Humedad: --%</p>
-                <p id="maxHydrogen">Mayor Hidrógeno: --ppm</p>
+                <div class="data-box">
+                    <p id="maxTemperature">Mayor Temperatura: --°C</p>
+                </div>
+                <div class="data-box">
+                    <p id="maxHumidity">Mayor Humedad: --%</p>
+                </div>
+                <div class="data-box">
+                    <p id="maxHydrogen">Mayor Hidrógeno: --ppm</p>
+                </div>
             </div>
-
         </section>
     </main>
 
