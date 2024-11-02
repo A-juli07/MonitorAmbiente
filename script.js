@@ -68,9 +68,13 @@ function updateUmidadeData(results) {
         .then(data => {
             const feeds = data.feeds.reverse();
             let dataContainer2 = document.getElementById("dataContainer2");
+            let maxHumidity = -Infinity;
             let htmlContent = ``;
 
             feeds.forEach(feed => {
+                const humidity = parseFloat(feed.field2);
+                if (humidity > maxHumidity) maxHumidity = humidity;
+                
                 const createdAt = new Date(feed.created_at);
                 const date = createdAt.toLocaleDateString();
                 const time = createdAt.toLocaleTimeString();
@@ -79,6 +83,7 @@ function updateUmidadeData(results) {
             });
 
             dataContainer2.innerHTML = htmlContent;
+            document.getElementById("maxHumidity").innerText = `Maior Umidade: ${maxHumidity}%`;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
 }
@@ -105,9 +110,13 @@ function updatehidrogenoData(results) {
         .then(data => {
             const feeds = data.feeds.reverse();
             let dataContainer3 = document.getElementById("dataContainer3");
+            let maxHydrogen = -Infinity;
             let htmlContent = ``;
 
             feeds.forEach(feed => {
+                const hydrogen = parseFloat(feed.field3);
+                if (hydrogen > maxHydrogen) maxHydrogen = hydrogen;
+                
                 const createdAt = new Date(feed.created_at);
                 const date = createdAt.toLocaleDateString();
                 const time = createdAt.toLocaleTimeString();
@@ -116,6 +125,7 @@ function updatehidrogenoData(results) {
             });
 
             dataContainer3.innerHTML = htmlContent;
+            document.getElementById("maxHydrogen").innerText = `Maior Hidrogênio: ${maxHydrogen}ppm`;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
 }
