@@ -135,7 +135,7 @@ function updateTotalDataCount(results) {
         .then(response => response.json())
         .then(data => {
             const totalDataCount = data.feeds.length;
-            document.getElementById("totalDataCount").innerText = `Quantidade total de dados: ${totalDataCount}`;
+            document.getElementById("totalDataCount").innerText = `Cantidad total de datos: ${totalDataCount}`;
         })
         .catch(error => console.error("Erro ao buscar dados da API:", error));
 }
