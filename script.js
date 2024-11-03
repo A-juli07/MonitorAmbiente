@@ -130,7 +130,18 @@ function updatehidrogenoData(results) {
         .catch(error => console.error("Error al buscar datos de la API:", error));
 }
 
+function updateTotalDataCount(results) {
+    fetch(`https://api.thingspeak.com/channels/${channelId}/feeds.json?results=${results}`)
+        .then(response => response.json())
+        .then(data => {
+            const totalDataCount = data.feeds.length;
+            document.getElementById("totalDataCount").innerText = `Quantidade total de dados: ${totalDataCount}`;
+        })
+        .catch(error => console.error("Erro ao buscar dados da API:", error));
+}
+
 
 updateChart1();
 updateChart2();
 updateChart3();
+updateTotalDataCount(1000);
