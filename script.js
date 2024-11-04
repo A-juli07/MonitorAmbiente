@@ -17,7 +17,7 @@ function updateChart1() {
         "&type=" + type +
         "&update=" + update +
         "&yaxismin=0" +
-        "&yaxismax=50";
+        "&yaxismax=30";
     document.getElementById('iframe1').src = apiUrl1;
     updateTemperatureData(results);
 }
@@ -58,7 +58,7 @@ function updateChart2() {
         "&type=" + type +
         "&update=" + update +
         "&yaxismin=0" +
-        "&yaxismax=100";
+        "&yaxismax=30";
     document.getElementById('iframe2').src = apiUrl2;
     updateUmidadeData(results);
 }
@@ -99,7 +99,7 @@ function updateChart3() {
         "&type=" + type +
         "&update=" + update +
         "&yaxismin=0" +
-        "&yaxismax=1000";
+        "&yaxismax=500";
     document.getElementById('iframe3').src = apiUrl3;
     updatehidrogenoData(results);
 }
