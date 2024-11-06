@@ -143,6 +143,5 @@ function updateTotalDataCount(results) {
 updateChart1();  
 updateChart2(); 
 updateChart3(); 
-
 updateTotalDataCount(8000);
 
