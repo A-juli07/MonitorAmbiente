@@ -140,8 +140,11 @@ function updateTotalDataCount(results) {
         .catch(error => console.error("Erro ao buscar dados da API:", error));
 }
 
+function updateAllChartsAndData() {
+    updateChart1();  
+    updateChart2(); 
+    updateChart3(); 
+    updateTotalDataCount(8000);
+}
 
-updateChart1();
-updateChart2();
-updateChart3();
-updateTotalDataCount(8000);
+setInterval(updateAllChartsAndData, 20000);
