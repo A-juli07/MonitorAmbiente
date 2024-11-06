@@ -140,8 +140,12 @@ function updateTotalDataCount(results) {
         .catch(error => console.error("Erro ao buscar dados da API:", error));
 }
 
-updateChart1();  
-updateChart2(); 
-updateChart3(); 
-updateTotalDataCount(8000);
+async function updateAllCharts() {
+    await updateChart1();
+    await updateChart2();
+    await updateChart3();
+    updateTotalDataCount(8000); 
+}
+
+updateAllCharts();
 
