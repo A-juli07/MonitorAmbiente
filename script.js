@@ -145,5 +145,5 @@ setInterval(function() {
     updateChart2();
     updateChart3();
     updateTotalDataCount(8000); 
-}, 1000);
+}, 20000);
 
