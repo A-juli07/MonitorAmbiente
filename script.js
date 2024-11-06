@@ -144,7 +144,7 @@ function updateAllChartsAndData() {
     updateChart1();  
     updateChart2(); 
     updateChart3(); 
-    updateTotalDataCount(8000);
+    updateTotalDataCount();
 }
 
 setInterval(updateAllChartsAndData, 10000);
