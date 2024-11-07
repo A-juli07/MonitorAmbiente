@@ -146,8 +146,6 @@ setInterval(function() {
     updateChart3();
 }, 20000);
 
-setInterval(function() {
-    updateTotalDataCount(8000);
-}, 1000);
+updateTotalDataCount(8000);
 
 
