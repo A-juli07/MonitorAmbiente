@@ -39,7 +39,6 @@ function updateTemperatureData(results) {
                 const time = createdAt.toLocaleTimeString();
 
                 htmlContent += `<p>Temperatura: ${feed.field1}°C (${date}, Hora: ${time})</p>`;
-                updateTotalDataCount(8000);
             });
             
             document.getElementById("maxTemperature").innerText = `Mayor Temperatura: ${maxTemperature}°C`;
@@ -81,7 +80,6 @@ function updateUmidadeData(results) {
                 const time = createdAt.toLocaleTimeString();
 
                 htmlContent += `<p>Humedad: ${feed.field2}% (${date}, Hora: ${time})</p>`;
-                updateTotalDataCount(8000);
             });
 
             dataContainer2.innerHTML = htmlContent;
@@ -124,7 +122,6 @@ function updatehidrogenoData(results) {
                 const time = createdAt.toLocaleTimeString();
 
                 htmlContent += `<p>Hidrogeno: ${feed.field3}ppm (${date}, Hora: ${time})</p>`;
-                updateTotalDataCount(8000);
             });
 
             dataContainer3.innerHTML = htmlContent;
@@ -148,4 +145,5 @@ setInterval(function() {
     updateChart2();
     updateChart3();
 }, 20000);
+updateTotalDataCount(8000);
 
