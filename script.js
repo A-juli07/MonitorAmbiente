@@ -45,6 +45,7 @@ function updateTemperatureData(results) {
             dataContainer1.innerHTML = htmlContent;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
+    updateTotalDataCount(8000);
 }
 
 function updateChart2() {
@@ -86,6 +87,7 @@ function updateUmidadeData(results) {
             document.getElementById("maxHumidity").innerText = `Mayor Humedad: ${maxHumidity}%`;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
+    updateTotalDataCount(8000);
 }
 
 function updateChart3() {
@@ -128,6 +130,7 @@ function updatehidrogenoData(results) {
             document.getElementById("maxHydrogen").innerText = `Mayor Hidrogeno: ${maxHydrogen}ppm`;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
+    updateTotalDataCount(8000);
 }
 
 function updateTotalDataCount(results) {
@@ -146,4 +149,3 @@ setInterval(function() {
     updateChart3();
 }, 20000);
 
-updateTotalDataCount(8000);
