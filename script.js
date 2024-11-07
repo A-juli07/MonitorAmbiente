@@ -131,7 +131,7 @@ function updatehidrogenoData(results) {
 }
 
 function updateTotalDataCount(results) {
-    fetch(`https://api.thingspeak.com/channels/${channelId}/feeds.json?results=${results}&update=${update}`)
+    fetch(`https://api.thingspeak.com/channels/${channelId}/feeds.json?results=${results}`)
         .then(response => response.json())
         .then(data => {
             const totalDataCount = data.feeds.length;
@@ -146,5 +146,8 @@ setInterval(function() {
     updateChart3();
 }, 20000);
 
-updateTotalDataCount(8000);
+setInterval(function() {
+    updateTotalDataCount(8000);
+}, 1000);
+
 
