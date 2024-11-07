@@ -39,13 +39,13 @@ function updateTemperatureData(results) {
                 const time = createdAt.toLocaleTimeString();
 
                 htmlContent += `<p>Temperatura: ${feed.field1}°C (${date}, Hora: ${time})</p>`;
+                updateTotalDataCount(8000);
             });
             
             document.getElementById("maxTemperature").innerText = `Mayor Temperatura: ${maxTemperature}°C`;
             dataContainer1.innerHTML = htmlContent;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
-    updateTotalDataCount(8000);
 }
 
 function updateChart2() {
@@ -81,13 +81,13 @@ function updateUmidadeData(results) {
                 const time = createdAt.toLocaleTimeString();
 
                 htmlContent += `<p>Humedad: ${feed.field2}% (${date}, Hora: ${time})</p>`;
+                updateTotalDataCount(8000);
             });
 
             dataContainer2.innerHTML = htmlContent;
             document.getElementById("maxHumidity").innerText = `Mayor Humedad: ${maxHumidity}%`;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
-    updateTotalDataCount(8000);
 }
 
 function updateChart3() {
@@ -124,13 +124,13 @@ function updatehidrogenoData(results) {
                 const time = createdAt.toLocaleTimeString();
 
                 htmlContent += `<p>Hidrogeno: ${feed.field3}ppm (${date}, Hora: ${time})</p>`;
+                updateTotalDataCount(8000);
             });
 
             dataContainer3.innerHTML = htmlContent;
             document.getElementById("maxHydrogen").innerText = `Mayor Hidrogeno: ${maxHydrogen}ppm`;
         })
         .catch(error => console.error("Error al buscar datos de la API:", error));
-    updateTotalDataCount(8000);
 }
 
 function updateTotalDataCount(results) {
